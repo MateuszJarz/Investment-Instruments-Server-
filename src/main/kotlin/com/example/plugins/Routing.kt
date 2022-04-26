@@ -1,16 +1,21 @@
 package com.example.plugins
 
-import io.ktor.server.routing.*
-import io.ktor.http.*
-import io.ktor.server.application.*
-import io.ktor.server.response.*
-import io.ktor.server.request.*
+import com.example.routes.getAllInstruments
+import com.example.routes.root
+import com.example.routes.searchInstruments
+import io.ktor.application.*
+import io.ktor.http.content.*
+import io.ktor.routing.*
+
 
 fun Application.configureRouting() {
 
     routing {
-        get("/") {
-            call.respondText("Hello World!")
+        root()
+        getAllInstruments()
+        searchInstruments()
+        static("/image") {
+            resource("images")
         }
     }
 }

@@ -8,7 +8,6 @@ data class Instrument(
     val image: String,
     val about: String,
     val rating: Double, // 0-5
-
-    val family: List<String>,
+    val family: List<String>, // ETF, ITP
 
 )
